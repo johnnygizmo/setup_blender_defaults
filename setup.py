@@ -7,15 +7,20 @@ bpy.context.scene.unit_settings.length_unit = 'MILLIMETERS'
 bpy.context.scene.cycles.preview_samples = 200
 bpy.context.scene.cycles.samples = 1000
 bpy.context.scene.cycles.use_preview_denoising = True
+bpy.context.scene.cycles.adaptive_threshold = 0.05
+bpy.context.scene.cycles.preview_adaptive_threshold = 0.2
 bpy.context.scene.render.film_transparent = True
 
 #Preferences
+bpy.context.preferences.addons['cycles'].preferences.compute_device_type = "OPTIX" # ('NONE', 'CUDA', 'OPTIX', 'HIP', 'ONEAPI')
+for device in  bpy.context.preferences.addons['cycles'].preferences.devices:
+    device.use = True
+
 bpy.context.preferences.inputs.use_zoom_to_mouse=True
 bpy.context.preferences.inputs.use_numeric_input_advanced=True
-bpy.context.preferences.view.show_splash=True
+bpy.context.preferences.view.show_splash=False
 bpy.context.preferences.view.show_developer_ui=True
 bpy.context.preferences.view.show_tooltips_python=True
-
 
 #Set Workspace Area Defaults
 
@@ -30,14 +35,12 @@ for i in bpy.data.screens['Layout'].areas:
     if i.type == "VIEW_3D":
         for j in i.spaces:
             j.shading.show_cavity = True
-            j.shading.show_shadows = True
             j.overlay.show_stats = True
             
 for i in bpy.data.screens['Modeling'].areas:
     if i.type == "VIEW_3D":
         for j in i.spaces:
             j.shading.show_cavity = True
-            j.shading.show_shadows = True
             j.overlay.show_stats = True 
                    
 
@@ -76,6 +79,7 @@ bpy.context.window.workspace = bpy.data.workspaces['Layout']
 # DO NOT EDIT BELOW HERE
 #
 ###############################################################################
+
 
 message = ""
 for m in modules:
