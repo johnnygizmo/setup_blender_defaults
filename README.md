@@ -19,30 +19,22 @@ To use the script:
   - Set Render samples to 1000
   - Turn on viewport denoising
   - turn on film transparent
-  
+  - Adpative Threshold to 0.05
+  - Preview Adaptive Threshold to 0.2
+  - Enable Optix
+  - Enable All Render Devices
+   
   - Zoom to Mouse
   - Advanced Numeric Input
   - Turn off Splash
   - Show developer options
   - Show python tooltips
   
-  - Turn off Gizmos in all 3d viewports
-  - Turn on Cavity, Shadows and Stats in 'Layout' and 'Modeling'
+  - Add a list of asset library paths
+  - Add a list of modules to enable
   
-  - Enable these add-ons
-    - curve_tools
-    - add_curve_extra_objects
-    - add_mesh_extra_objects
-    - mesh_looptools
-    - pace_view3d_modifier_tools
-    - space_view3d_align_tools
-    - object_boolean_tools
-    - object_edit_linked
-    - node_wrangler
-    - io_import_images_as_planes
-    - matslotcleaner-master
-    - ImagePaste-main
-    - set_viewport_color
+  - Turn off Gizmos in all 3d viewports
+  - Turn on Cavity and Stats in 'Layout' and 'Modeling' workspaces
 
   - Delete all scene items
   - Add a straight aligned camera
