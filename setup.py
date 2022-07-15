@@ -22,6 +22,13 @@ bpy.context.preferences.view.show_splash=False
 bpy.context.preferences.view.show_developer_ui=True
 bpy.context.preferences.view.show_tooltips_python=True
 
+# Add a list of asset libraries to add here
+asset_libraries = [
+    "C:\\path\\to\\my\\library\\"
+]
+
+
+
 #Set Workspace Area Defaults
 
 for screen in bpy.data.screens:
@@ -80,6 +87,8 @@ bpy.context.window.workspace = bpy.data.workspaces['Layout']
 #
 ###############################################################################
 
+for lib in asset_libraries:
+    bpy.ops.preferences.asset_library_add(directory=lib)
 
 message = ""
 for m in modules:
@@ -96,6 +105,9 @@ if message != "":
     bpy.context.window_manager.popup_menu(draw, title="Not Installed", icon='INFO')    
 
 bpy.ops.text.unlink()
+
+
+
 
 bpy.ops.wm.save_homefile()
 bpy.ops.wm.save_userpref()
